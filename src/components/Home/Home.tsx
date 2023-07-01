@@ -2,18 +2,20 @@ import React from "react";
 
 import style from "./Home.module.css";
 import ShowPost from "../ShowPost/ShowPost";
+import { PostContext, contextType } from "../../App";
+
+export type postType = {
+  title: string;
+  difficulty: number;
+};
 
 const Home = () => {
-  type postType = {
-    title: string;
-    difficulty: number;
-  };
-
   const [post, setPost] = React.useState<postType>({
     title: "",
     difficulty: 0,
   });
-  const [posts, setPosts] = React.useState<postType[]>([]);
+
+  const [posts, setPosts] = React.useContext<contextType>(PostContext);
 
   const changlePostValues = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPost({ ...post, [e.target.name]: e.target.value });
@@ -71,7 +73,7 @@ const Home = () => {
         </div>
       )}
 
-      {posts.length > 0 && <ShowPost posts={posts} setPosts={setPosts} />}
+      {posts.length > 0 && <ShowPost />}
     </div>
   );
 };

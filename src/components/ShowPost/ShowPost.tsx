@@ -1,15 +1,16 @@
 import React from "react";
 // styles
 import style from "./ShowPost.module.css";
+import Modal from "../Modal/Modal";
+import { postType } from "../Home/Home";
 
-type Props = {
-  posts: { title: string; difficulty: number }[] | null;
-  setPosts: React.Dispatch<
-    React.SetStateAction<{ title: string; difficulty: number }[]>
-  >;
-};
+// hooks
+import { useContext } from "react";
+import { PostContext, contextType } from "../../App";
 
-const ShowPost = ({ posts, setPosts }: Props) => {
+const ShowPost = () => {
+  const [postEdit, setPostEdit] = React.useState<postType | null>(null);
+  const [posts, setPosts] = useContext<contextType>(PostContext);
   const deletePost = (title: string) => {
     setPosts(
       (oldPosts) => oldPosts && oldPosts.filter((item) => item.title !== title)
@@ -17,32 +18,41 @@ const ShowPost = ({ posts, setPosts }: Props) => {
   };
 
   return (
-    <div className={style.container}>
-      {posts
-        ?.sort((a, b) => b.difficulty - a.difficulty)
-        .map((post, index) => (
-          <div key={index} className={style.postContainer}>
-            <div className={style.postData}>
-              <h4>{post.title}</h4>
-              <p>Dificuldade: {post.difficulty}</p>
-            </div>
+    <>
+      <Modal
+        postData={postEdit}
+        setPostEdit={setPostEdit}
+      />
+      <div className={style.container}>
+        {posts
+          ?.sort((a, b) => b.difficulty - a.difficulty)
+          .map((post, index) => (
+            <div key={index} className={style.postContainer}>
+              <div className={style.postData}>
+                <h4>{post.title}</h4>
+                <p>Dificuldade: {post.difficulty}</p>
+              </div>
 
-            <div className={style.postOptions}>
-              <img
-                src={process.env.PUBLIC_URL + "/images/LapisIcon.png"}
-                alt="editar"
-              />
-              <img
-                src={process.env.PUBLIC_URL + "/images/TrashIcon.png"}
-                alt="editar"
-                onClick={() => {
-                  deletePost(post.title);
-                }}
-              />
+              <div className={style.postOptions}>
+                <img
+                  src={process.env.PUBLIC_URL + "/images/LapisIcon.png"}
+                  alt="editar"
+                  onClick={() => {
+                    setPostEdit(post);
+                  }}
+                />
+                <img
+                  src={process.env.PUBLIC_URL + "/images/TrashIcon.png"}
+                  alt="editar"
+                  onClick={() => {
+                    deletePost(post.title);
+                  }}
+                />
+              </div>
             </div>
-          </div>
-        ))}
-    </div>
+          ))}
+      </div>
+    </>
   );
 };
 

@@ -1,0 +1,61 @@
+.disactive{
+  display: none;
+}
+
+.fade{
+  width: 100%;
+  height: 200vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #000;
+  opacity: .3;
+  cursor: pointer;
+}
+
+.modal{
+  position: absolute;
+  top: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 500px;
+  height: 400px;
+  z-index: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+
+}
+
+.formulario{
+  width: 20em;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.formulario > label{
+  text-align: left;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.formulario > label > input{
+  border: 1px solid black;
+  width: calc(100% - 22px);
+  height: 1.3em;
+  padding: 10px;
+}
+
+.formulario > button{
+  width: 100%;
+  height: 3em;
+  background-color: aqua;
+  border: none
+}
+.formulario > button:hover{
+  background-color: #00fffff8;
+}
