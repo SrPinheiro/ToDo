@@ -1,0 +1,12 @@
+body {
+  height: 100vh;
+  color: #9be3fb;
+  overflow: scroll;
+  font-family: sans-serif;
+  overflow-x: hidden;
+  background-color: #faf8f8;
+}
+* {
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,48 @@
+.container{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.titulo{
+  padding-top: 30px;
+  text-align: center;
+}
+
+.formulario{
+  width: 40em;
+  font-weight: bolder;
+  margin-top: 10px;
+}
+
+.formulario > label{
+  text-align: left;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.formulario > label > input{
+  border: 1px solid black;
+  width: calc(100% - 22px);
+  height: 1.3em;
+  padding: 10px;
+}
+
+.formulario > button{
+  width: 100%;
+  height: 3em;
+  background-color: aqua;
+  border: none
+}
+.formulario > button:hover{
+  background-color: #00fffff8;
+}
+
+.noPost{
+  width: 100%;
+  text-align: center;
+  padding: 100px 0;
+}
