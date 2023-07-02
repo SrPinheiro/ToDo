@@ -1,21 +1,23 @@
-import React from "react";
+// Hooks
+import { useState } from "react";
+import { GetPostContext } from "../../Hooks/UsePostContext";
 
-import style from "./Home.module.css";
+// css
+import styles from "./Home.module.css";
+
+// Components
 import ShowPost from "../ShowPost/ShowPost";
-import { PostContext, contextType } from "../../App";
 
-export type postType = {
-  title: string;
-  difficulty: number;
-};
+// types
+import { postType } from "../../Context/PostContext";
 
 const Home = () => {
-  const [post, setPost] = React.useState<postType>({
+  const [post, setPost] = useState<postType>({
     title: "",
     difficulty: 0,
   });
 
-  const [posts, setPosts] = React.useContext<contextType>(PostContext);
+  const [posts, setPosts] = GetPostContext();
 
   const changlePostValues = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPost({ ...post, [e.target.name]: e.target.value });
@@ -36,10 +38,10 @@ const Home = () => {
     setPosts([...posts, post]);
   };
   return (
-    <div className={style.container}>
-      <h2 className={style.titulo}>O que você ira fazer?</h2>
+    <div className={styles.container}>
+      <h2 className={styles.titulo}>O que você ira fazer?</h2>
 
-      <form className={style.formulario} onSubmit={handleSubmit}>
+      <form className={styles.formulario} onSubmit={handleSubmit}>
         <label>
           <p>Titulo:</p>
           <input
@@ -66,9 +68,9 @@ const Home = () => {
         <button>Cadastrar</button>
       </form>
 
-      <h3 className={style.titulo}>Suas tarefas:</h3>
+      <h3 className={styles.titulo}>Suas tarefas:</h3>
       {posts.length === 0 && (
-        <div className={style.noPost}>
+        <div className={styles.noPost}>
           <p>Nenhuma tarefa cadastrada</p>
         </div>
       )}

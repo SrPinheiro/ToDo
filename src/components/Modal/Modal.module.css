@@ -1,16 +1,15 @@
-
-.disactive{
+.disactive {
   display: none;
 }
 
-.fade{
+.fade {
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
   position: fixed;
   background-color: #000;
-  opacity: .3;
+  opacity: 0.3;
   cursor: pointer;
 }
 
@@ -32,32 +31,31 @@
   overflow-y: auto;
 }
 
-
-.formulario{
+.formulario {
   width: 20em;
   font-weight: bolder;
   margin-top: 10px;
 }
 
-.formulario > label{
+.formulario > label {
   text-align: left;
   display: block;
   margin-bottom: 20px;
 }
 
-.formulario > label > input{
+.formulario > label > input {
   border: 1px solid black;
   width: calc(100% - 22px);
   height: 1.3em;
   padding: 10px;
 }
 
-.formulario > button{
+.formulario > button {
   width: 100%;
   height: 3em;
   background-color: aqua;
-  border: none
+  border: none;
 }
-.formulario > button:hover{
+.formulario > button:hover {
   background-color: #00fffff8;
 }

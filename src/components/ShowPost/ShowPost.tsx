@@ -2,15 +2,14 @@ import React from "react";
 // styles
 import style from "./ShowPost.module.css";
 import Modal from "../Modal/Modal";
-import { postType } from "../Home/Home";
+import { postType } from "../../Context/PostContext"
 
 // hooks
-import { useContext } from "react";
-import { PostContext, contextType } from "../../App";
+import { GetPostContext } from "../../Hooks/UsePostContext";
 
 const ShowPost = () => {
   const [postEdit, setPostEdit] = React.useState<postType | null>(null);
-  const [posts, setPosts] = useContext<contextType>(PostContext);
+  const [posts, setPosts] = GetPostContext()
   const deletePost = (title: string) => {
     setPosts(
       (oldPosts) => oldPosts && oldPosts.filter((item) => item.title !== title)
