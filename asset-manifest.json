@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ToDo-TypeScript/static/css/main.df1d83f7.css",
+    "main.css": "/ToDo-TypeScript/static/css/main.3b79ef00.css",
     "main.js": "/ToDo-TypeScript/static/js/main.35cf4a69.js",
     "index.html": "/ToDo-TypeScript/index.html",
-    "main.df1d83f7.css.map": "/ToDo-TypeScript/static/css/main.df1d83f7.css.map",
+    "main.3b79ef00.css.map": "/ToDo-TypeScript/static/css/main.3b79ef00.css.map",
     "main.35cf4a69.js.map": "/ToDo-TypeScript/static/js/main.35cf4a69.js.map"
   },
   "entrypoints": [
-    "static/css/main.df1d83f7.css",
+    "static/css/main.3b79ef00.css",
     "static/js/main.35cf4a69.js"
   ]
 }
