@@ -54,7 +54,7 @@ const Modal = ({ postData, setPostEdit }: Props) => {
     desactiveModal();
   }
   return (
-    <div id="modal" className={styles.disactive} ref={modalRef}>
+    <div id="modal" className={`${styles.disactive} ${styles.container}`} ref={modalRef}>
       <div className={styles.fade} onClick={desactiveModal}></div>
       <div className={styles.modal}>
         <h3>Editar</h3>
